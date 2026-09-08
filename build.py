@@ -74,7 +74,7 @@ def main() -> None:
 			post_metadata = json.load(f)
 			per_post_metadata[post_slug] = post_metadata
 
-		template_name = str(template_path.relative_to(SOURCE_PATH))
+		template_name = str(template_path.relative_to(SOURCE_PATH)).replace("\\", "/")
 		render_template(
 			environment,
 			template_name,
@@ -99,7 +99,7 @@ def main() -> None:
 		with project_metadata_file_path.open("r") as f:
 			project_metadata = json.load(f)
 			per_project_metadata[project_slug] = project_metadata
-		template_name = str(template_path.relative_to(SOURCE_PATH))
+		template_name = str(template_path.relative_to(SOURCE_PATH)).replace("\\", "/")
 		render_template(
 			environment,
 			template_name,

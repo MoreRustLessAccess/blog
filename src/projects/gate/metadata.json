@@ -8,7 +8,9 @@
 		"rust",
 		"axum",
 		"sql",
-		"postgres"
+		"postgres",
+		"openid_connect",
+		"oauth2"
 	],
 	"developed_with": {
 		"employer": "drammen_kommune",

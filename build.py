@@ -49,6 +49,8 @@ def main() -> None:
 		shutil.rmtree(BUILD_OUTPUT_PATH)
 	except FileNotFoundError:
 		pass
+	except PermissionError:
+		print("Failed to clean BUILD_OUTPUT_PATH")
 	environment = jinja2.Environment(
 		loader=jinja2.FileSystemLoader([str(SOURCE_PATH)])
 	)

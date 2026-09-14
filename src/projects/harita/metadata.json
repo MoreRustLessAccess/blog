@@ -1,0 +1,16 @@
+{
+	"display_name": "Harita",
+	"summary": "Tool to convert from specialized coordinate systems to GPS coordinates",
+	"created_at": "2024-11-13",
+	"tags": [
+		"typescript",
+		"svelte",
+		"lit"
+	],
+	"developed_with": {
+		"employer": "drammen_kommune",
+		"developers": 2
+	},
+	"links": {
+	}
+}

@@ -47,6 +47,9 @@
 		},
 		"openid_connect": {
 			"display_name": "OpenID Connect"
+		},
+		"svelte": {
+			"display_name": "Svelte"
 		}
 	},
 	"employers": {

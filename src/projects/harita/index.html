@@ -1,0 +1,12 @@
+{% extends "projects/base.html" %}
+{% block page_content %}
+	{{ super() }}
+	<h2>History</h2>
+	<p>
+		Originally Harita was written in Svelte (not to be confused with Svelte-Kit), which was then built to a single HTML file that we distributed to users.
+		This was done as originally we didn't have access to any way to host our service.
+
+		Later when Svelte 5 came out we decided to migrate our projects to Lit, and Harita was part of that migration.
+		A bit later than that we finally got access to a server, and as part of that we started hosting Harita.
+	</p>
+{% endblock %}

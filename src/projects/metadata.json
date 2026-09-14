@@ -39,8 +39,8 @@
 		"github_actions": {
 			"display_name": "GitHub Actions"
 		},
-		"python": {
-			"display_name": "Python"
+		"userscript": {
+			"display_name": "Userscript"
 		}
 	},
 	"employers": {

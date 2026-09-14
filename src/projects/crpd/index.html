@@ -1,0 +1,18 @@
+{% extends "projects/base.html" %}
+{% block page_content %}
+	{{ super() }}
+	<h2>Details</h2>
+	<p>
+		The automation was split into three parts
+	</p>
+	<ul>
+		<li>The scraper</li>
+		<li>The data format</li>
+		<li>The importer</li>
+	</ul>
+	<p>
+		The scraper was a userscript that interacted with the course as a normal user, 
+		going through the course question by question downloading everything into our course format.
+		The course importer would then go into the target course platform's course panel and enter in all the data manually.
+	</p>
+{% endblock %}

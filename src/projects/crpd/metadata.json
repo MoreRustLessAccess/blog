@@ -1,0 +1,15 @@
+{
+	"display_name": "CRPD Automations",
+	"summary": "Automations allowing you to import course content from one course platform and export on another/export to word doc",
+	"created_at": "2025-05-05",
+	"tags": [
+		"typescript",
+		"userscript"
+	],
+	"developed_with": {
+		"employer": "drammen_kommune",
+		"developers": 1
+	},
+	"links": {
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"display_name": "Yggdrasil",
+	"summary": "Service to collect social media metrics into PowerBI reports",
+	"created_at": "2025-05-05",
+	"tags": [
+		"typescript",
+		"rust",
+		"lit",
+		"axum",
+		"postgres",
+		"sql",
+		"oauth2"
+	],
+	"developed_with": {
+		"employer": "drammen_kommune",
+		"developers": 2
+	},
+	"links": {
+	}
+}

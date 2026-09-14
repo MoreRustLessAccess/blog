@@ -41,6 +41,12 @@
 		},
 		"userscript": {
 			"display_name": "Userscript"
+		},
+		"oauth2": {
+			"display_name": "OAuth2"
+		},
+		"openid_connect": {
+			"display_name": "OpenID Connect"
 		}
 	},
 	"employers": {

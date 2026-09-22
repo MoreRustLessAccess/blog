@@ -1,0 +1,7 @@
+.visualization {
+	border: 0.01rem solid black;
+	padding: 1rem;
+	&:not(:defined) {
+		display: block;
+	}
+}

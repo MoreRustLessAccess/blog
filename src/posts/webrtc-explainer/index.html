@@ -1,0 +1,23 @@
+{% extends "posts/base.html" %}
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="./index.css">
+	<script src="./visualizations/ice-candidates.ts" type="module"></script>
+	<script src="./visualizations/sdp.ts" type="module"></script>
+{% endblock %}
+{% macro visualization_placeholder() %}
+	<p>This visualization has not loaded yet.</p>
+	<noscript>
+		<p>Hint: JavaScript is disabled</p>
+	</noscript>
+{% endmacro %}
+{% block post_content %}
+	<h1>{{ post_metadata.title }}</h1>
+	<h1>Zoo</h1>
+	<bb-webrtc-ice-candidates-visualization class="visualization">
+		{{ visualization_placeholder() }}
+	</bb-webrtc-ice-candidates-visualization>
+	<bb-webrtc-sdp-visualization class="visualization">
+		{{ visualization_placeholder() }}
+	</bb-webrtc-sdp-visualization>
+{% endblock %}

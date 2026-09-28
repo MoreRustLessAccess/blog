@@ -1,0 +1,91 @@
+{% extends "posts/base.html" %}
+{% macro visualization_error() %}
+	<h3>Visualization</h3>
+	<p>This visualization has not loaded yet</p>
+	<noscript>
+		<p>Hint: you have JavaScript disabled / your browser doesn't support JS</p>
+	</noscript>
+{% endmacro %}
+
+{% block head -%}
+	{{ super() }}
+	<script src="./visualization.ts" type="module" async></script>
+	<link rel="stylesheet" href="./index.css">
+{% endblock %}
+{% block post_content -%}
+	<h1>{{ post_metadata.title }}</h1>
+	<p>
+		Curse is a silly little potion brewing game I made together with a few friends, where you buy ingredients with various twists like "needs to be heated between 50&deg;c and 60&deg;c" or "can only be rotated clockwise".
+	</p>
+	<h2>Overview</h2>
+	<p>
+		Curse was made without a game engine - it instead uses Lit (the web framework) to manage state and absolutely positioned <code>img</code> tags to render the content.
+	</p>
+	<img src="images/image-layout.png" alt="Curse but every single image has a turquoise outline">
+	<p>This also applies to the entities in the scene (aka any physics object)</p>
+	<img src="images/image-layout-entities.png" alt="">
+	<p>
+		While this worked, this was not the smartest idea considering we had limited time due to the constraints of the gamejam. This ended with the gameplay being very shallow and unbalanced.
+	</p>
+	<h2>The flask</h2>
+	<p>
+		At the center of curse is <em>the flask</em>. This is where you do all the brewing, and where the ingredients twist's are active.
+	</p>
+	<bb-curse-flask-visualization class="visualization">
+		{{ visualization_error() }}
+	</bb-curse-flask-visualization>
+	<p>
+		The flask can contain the ingredients you put in, where each ingredient gets their own layer in the flask.
+	</p>
+	<bb-curse-flask-visualization class="visualization">
+		{{ visualization_error() }}
+		<bb-curse-flask-ingredient-instance basecolor="#f00" heatedfraction="1" totalrotation="500">
+		<bb-curse-flask-ingredient-instance basecolor="#0f0" heatedfraction="1" totalrotation="500">
+		<bb-curse-flask-ingredient-instance basecolor="#00f" heatedfraction="1" totalrotation="500">
+	</bb-curse-flask-visualization>
+	<section id="zoo">
+		<h1>Zoo</h1>
+		<h2>Generic</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0">
+			<bb-curse-flask-ingredient-instance basecolor="#00f">
+		</bb-curse-flask-visualization>
+		<h2>Fully rotated</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#00f" totalrotation="800">
+		</bb-curse-flask-visualization>
+		<h2>Max temp</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00" totalrotation="800" temperaturemax="30">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0" totalrotation="800" temperaturemax="30">
+			<bb-curse-flask-ingredient-instance basecolor="#00f" totalrotation="800" temperaturemax="30">
+		</bb-curse-flask-visualization>
+		<h2>Min temp</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00" totalrotation="800" temperaturemin="30">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0" totalrotation="800" temperaturemin="30">
+			<bb-curse-flask-ingredient-instance basecolor="#00f" totalrotation="800" temperaturemin="30">
+		</bb-curse-flask-visualization>
+		<h2>Liquid only</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]" parts="[&quot;liquid&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#00f" totalrotation="800">
+		</bb-curse-flask-visualization>
+		<h2>No flask</h2>
+		<bb-curse-flask-visualization class="visualization" controls="[&quot;layers&quot;, &quot;color&quot;, &quot;heat&quot;, &quot;temperature&quot;]" parts="[&quot;liquid&quot;, &quot;mask&quot;]">
+			{{ visualization_error() }}
+			<bb-curse-flask-ingredient-instance basecolor="#f00" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#0f0" totalrotation="800">
+			<bb-curse-flask-ingredient-instance basecolor="#00f" totalrotation="800">
+		</bb-curse-flask-visualization>
+	</section>
+{% endblock %}

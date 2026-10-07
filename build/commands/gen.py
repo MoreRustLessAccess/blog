@@ -33,6 +33,7 @@ async def gen_post(root_path: Path, title: str, *, slug: str | None = None) -> N
 		metadata: PostMetadata = {
 			"id": PostId(str(uuid7())),
 			"title": title,
+			"summary": "",
 			"published_at": today
 		}
 		json.dump(metadata, f, indent="\t")

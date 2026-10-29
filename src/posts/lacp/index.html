@@ -1,0 +1,14 @@
+{% extends "posts/base.html" %}
+
+{% block head -%}
+	{{ super() }}
+{% endblock %}
+{% block post_content -%}
+	<h1>{{ post_metadata.title }}</h1>
+	<h2>Sources</h2>
+	<ol>
+		<li id="source-spec"><a href="https://1.ieee802.org/wp-content/uploads/2019/03/802-1AX-Rev-d1-0.pdf">802-1AX Rev 1</a></li>
+		<li id="source-linux"><a href="https://github.com/torvalds/linux/tree/master/drivers/net/bonding">Linux kernel's bonding module</a></li>
+		<li id="source-linux-wiki"><a href="https://wiki.linuxfoundation.org/networking/bonding">Linux kernel's bonding wiki page</a></li>
+	</ol>
+{% endblock %}
